@@ -1,0 +1,153 @@
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #19171d;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-right: 1px solid #2d2d2d;
+  overflow-y: auto;
+}
+
+.sidebar__workspace {
+  padding: 16px 20px;
+  border-bottom: 1px solid #2d2d2d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar__workspace-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.sidebar__status {
+  font-size: 11px;
+  color: #2bac76;
+}
+
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.sidebar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #4a154b;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sidebar__username {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d1d2d3;
+}
+
+.sidebar__section {
+  padding: 16px 0;
+}
+
+.sidebar__section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar__add-btn {
+  background: none;
+  border: none;
+  color: #9b9b9b;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.sidebar__add-btn:hover {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+.sidebar__new-channel {
+  display: flex;
+  gap: 6px;
+  padding: 4px 12px 8px;
+}
+
+.sidebar__new-channel input {
+  flex: 1;
+  background: #2d2d2d;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.sidebar__new-channel button {
+  background: #4a154b;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sidebar__channels {
+  list-style: none;
+}
+
+.sidebar__channel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 20px;
+  font-size: 15px;
+  color: #9b9b9b;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 1px 8px;
+  transition: all 0.15s;
+}
+
+.sidebar__channel:hover {
+  background: #2d2d2d;
+  color: #d1d2d3;
+}
+
+.sidebar__channel.active {
+  background: #4a154b;
+  color: #fff;
+}
+
+.sidebar__hash {
+  font-size: 16px;
+  color: inherit;
+}
+
+.sidebar__dm-dot {
+  font-size: 8px;
+  color: #2bac76;
+}
