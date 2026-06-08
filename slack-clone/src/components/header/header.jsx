@@ -1,9 +1,15 @@
 import { useSelector } from 'react-redux'
-import './header.css'
+import './Header.css'
 
 function Header() {
   const { activeChannel } = useSelector((state) => state.channels)
   const messages = useSelector((state) => state.messages.byChannel[activeChannel] || [])
+
+  const handleInvite = () => {
+    const inviteLink = window.location.href
+    navigator.clipboard.writeText(inviteLink)
+    alert('✅ Invite link copied to clipboard!\nShare this link with your friends to join.')
+  }
 
   return (
     <div className="header">
@@ -14,9 +20,11 @@ function Header() {
         <span className="header__desc">{messages.length} messages</span>
       </div>
       <div className="header__right">
-        <button className="header__btn">🔍</button>
-        <button className="header__btn">👥</button>
-        <button className="header__btn">📌</button>
+        <button className="header__btn" title="Search">🔍</button>
+        <button className="header__btn" title="Members">👥</button>
+        <button className="header__invite" onClick={handleInvite}>
+          + Invite People
+        </button>
       </div>
     </div>
   )

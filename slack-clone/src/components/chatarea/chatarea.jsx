@@ -1,11 +1,25 @@
 import { useSelector } from 'react-redux'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { db } from '../../firebase/firebase'
+import { collection, query, orderBy, onSnapshot } from 'firebase/firestore'
 import './chatarea.css'
 
 function ChatArea() {
   const { activeChannel } = useSelector((state) => state.channels)
-  const messages = useSelector((state) => state.messages.byChannel[activeChannel] || [])
+  const [messages, setMessages] = useState([])
   const bottomRef = useRef(null)
+
+  useEffect(() => {
+    const q = query(
+      collection(db, 'channels', activeChannel, 'messages'),
+      orderBy('timestamp', 'asc')
+    )
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const msgs = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+      setMessages(msgs)
+    })
+    return () => unsubscribe()
+  }, [activeChannel])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -15,7 +29,7 @@ function ChatArea() {
     <div className="chat">
       <div className="chat__welcome">
         <h3 className="chat__welcome-title"># {activeChannel}</h3>
-        <p className="chat__welcome-desc">This is the beginning of the <strong>#{activeChannel}</strong> channel.</p>
+        <p className="chat__welcome-desc">Beginning of <strong>#{activeChannel}</strong></p>
       </div>
 
       {messages.length === 0 && (

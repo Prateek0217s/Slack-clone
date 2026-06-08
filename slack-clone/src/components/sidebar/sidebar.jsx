@@ -22,19 +22,19 @@ function Sidebar() {
 
   return (
     <div className="sidebar">
-      {/* Workspace Header */}
+
       <div className="sidebar__workspace">
         <h1 className="sidebar__workspace-name">DevTeam</h1>
         <span className="sidebar__status">● Active</span>
       </div>
 
-      {/* User Info */}
+
       <div className="sidebar__user">
         <div className="sidebar__avatar">{user.avatar}</div>
         <span className="sidebar__username">{user.name}</span>
       </div>
 
-      {/* Channels */}
+
       <div className="sidebar__section">
         <div className="sidebar__section-header">
           <span>Channels</span>
@@ -68,13 +68,13 @@ function Sidebar() {
         </ul>
       </div>
 
-      {/* Direct Messages */}
+
       <div className="sidebar__section">
         <div className="sidebar__section-header">
           <span>Direct Messages</span>
         </div>
         <ul className="sidebar__channels">
-          {['Alex', 'Sam', 'Jordan'].map((person) => (
+          {['Raj', 'Devash', 'Mayank'].map((person) => (
             <li key={person} className="sidebar__channel sidebar__dm">
               <span className="sidebar__dm-dot">●</span> {person}
             </li>

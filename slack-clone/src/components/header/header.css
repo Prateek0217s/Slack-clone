@@ -1,17 +1,19 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 12px 24px;
   border-bottom: 1px solid #2d2d2d;
   background: #1a1d21;
   min-height: 56px;
+  gap: 12px;
 }
 
 .header__left {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-right: auto;
 }
 
 .header__hash {
@@ -38,7 +40,9 @@
 
 .header__right {
   display: flex;
-  gap: 4px;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
 }
 
 .header__btn {
@@ -53,4 +57,21 @@
 
 .header__btn:hover {
   background: #2d2d2d;
+}
+
+.header__invite {
+  background: #4a154b;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.header__invite:hover {
+  background: #7c3aed;
 }
